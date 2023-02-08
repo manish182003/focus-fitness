@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:focus_fitness/screens/login/login_page.dart';
+import 'package:focus_fitness/utils/app_colors.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,9 +15,18 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Focus Fitness',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        appBarTheme: const AppBarTheme(
+          backgroundColor: AppColors.primary,
+          elevation: 0,
+        ),
+        colorScheme: ColorScheme.fromSwatch().copyWith(
+          secondary: AppColors.secondary,
+          primary: AppColors.primary,
+        ),
+        scaffoldBackgroundColor: AppColors.primary
       ),
       home: const LoginPage(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }

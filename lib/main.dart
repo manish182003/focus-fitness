@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:focus_fitness/screens/login/login_page.dart';
+import 'package:focus_fitness/screens/auth/login_page.dart';
 import 'package:focus_fitness/utils/app_colors.dart';
 
 void main() {

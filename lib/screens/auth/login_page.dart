@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:focus_fitness/utils/app_colors.dart';
+import 'package:focus_fitness/widgets/auth_text_form_field.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -51,21 +52,26 @@ class _LoginPageState extends State<LoginPage> {
           Container(
             width: 400,
             height: 300,
-            margin: EdgeInsets.only(top: 20, bottom: 20, left: 10, right: 10),
+            margin: const EdgeInsets.only(top: 20, bottom: 20, left: 10, right: 10),
             // color: AppColors.subtitle,
             decoration: BoxDecoration(
-                color: AppColors.icons.withOpacity(0.5),
+                color: const Color(0xffffffff).withOpacity(0.5),
                 borderRadius: BorderRadius.circular(10)),
             padding: const EdgeInsets.all(10),
             child: Form(
               child: Column(
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
-                  TextFormField(
-                    decoration: const InputDecoration(
-                        border: OutlineInputBorder(), hintText: "Email"),
+                  AuthTextFormField(
+                    label: 'Email',
+                    hintText: 'Digite o seu endereço de email',
+                    keyboardType: TextInputType.emailAddress,
+                    validator: (value) {
+                      
+                    },
+                    
                   ),
                   const SizedBox(
                     height: 15,

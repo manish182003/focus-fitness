@@ -25,7 +25,7 @@ class AuthTextFormField extends StatelessWidget {
       decoration: InputDecoration(
         label: Text(label),
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(10),
           borderSide: const BorderSide(
             color: AppColors.subtitle,
           ),

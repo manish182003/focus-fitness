@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:focus_fitness/screens/auth/login_page.dart';
+import 'package:focus_fitness/screens/auth/register_page.dart';
 import 'package:focus_fitness/utils/app_colors.dart';
+import 'package:focus_fitness/utils/app_routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,7 +27,12 @@ class MyApp extends StatelessWidget {
         ),
         scaffoldBackgroundColor: AppColors.primary
       ),
-      home: const LoginPage(),
+      home: const RegisterPage(),
+      routes: {
+        AppRoutes.login:(context) => const LoginPage(),
+        AppRoutes.register:(context) => const RegisterPage()
+
+      },
       debugShowCheckedModeBanner: false,
     );
   }

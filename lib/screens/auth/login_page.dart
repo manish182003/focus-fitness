@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:focus_fitness/utils/app_colors.dart';
+import 'package:focus_fitness/utils/app_routes.dart';
 import 'package:focus_fitness/widgets/auth_text_form_field.dart';
 
 class LoginPage extends StatefulWidget {
@@ -52,7 +53,8 @@ class _LoginPageState extends State<LoginPage> {
           Container(
             width: 400,
             height: 300,
-            margin: const EdgeInsets.only(top: 20, bottom: 20, left: 10, right: 10),
+            margin:
+                const EdgeInsets.only(top: 20, bottom: 20, left: 10, right: 10),
             // color: AppColors.subtitle,
             decoration: BoxDecoration(
                 color: const Color(0xffffffff).withOpacity(0.5),
@@ -68,19 +70,15 @@ class _LoginPageState extends State<LoginPage> {
                     label: 'Email',
                     hintText: 'Digite o seu endereço de email',
                     keyboardType: TextInputType.emailAddress,
-                    validator: (value) {
-                      
-                    },
-                    
+                    validator: (value) {},
                   ),
                   const SizedBox(
                     height: 15,
                   ),
-                  TextFormField(
-                    decoration: const InputDecoration(
-                      border: OutlineInputBorder(),
-                      hintText: "Senha",
-                    ),
+                  AuthTextFormField(
+                    label: "Senha",
+                    hintText: "Digite a senha",
+                    validator: (value) {},
                   ),
                   const SizedBox(
                     height: 15,
@@ -92,9 +90,18 @@ class _LoginPageState extends State<LoginPage> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const Text("Entrar", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
-                        const SizedBox(width: 10,),
-                        const Icon(Icons.login, size: 25,),
+                        const Text(
+                          "Entrar",
+                          style: TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.bold),
+                        ),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        const Icon(
+                          Icons.login,
+                          size: 25,
+                        ),
                       ],
                     ),
                   ),
@@ -109,7 +116,9 @@ class _LoginPageState extends State<LoginPage> {
                             fontWeight: FontWeight.normal),
                       ),
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).pushNamed(AppRoutes.register, );
+                        },
                         child: const Text(
                           'Cadastre-se',
                           style: TextStyle(
